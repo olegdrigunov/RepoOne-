@@ -1,0 +1,10 @@
+public function copyFile($SRCFILE){
+
+		$DSTFILE = $_SERVER["DOCUMENT_ROOT"].'/temp'.$SRCFILE;
+		$SRCFILE = $this->siteURL.$SRCFILE;
+
+		mkdir(dirname($DSTFILE), 0755, true);
+		copy($SRCFILE, $DSTFILE);
+
+		return $DSTFILE;
+	}
